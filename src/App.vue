@@ -5,10 +5,9 @@
 <template>
  <div class="container-fluid m-0">
   <div class="row">
-    <Sidebar :username="username" :isAdmin="isAdmin" />
+    <Sidebar :username="username" :isAdmin="isAdmin" @changeRole="changeRole" />
     <router-view /> 
     
-   <button v-show="isAdmin" @click="changeRole">Change Role</button> 
   </div>
 </div>
 </template>
@@ -24,7 +23,7 @@ export default {
   data() {
     return {
       username: 'wael',
-      isAdmin: false
+      isAdmin: true
     };
   },
   methods: {
