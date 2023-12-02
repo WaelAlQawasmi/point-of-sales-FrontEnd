@@ -24,7 +24,7 @@
                                 <td>{{ product.name }}</td>
                                 <td>{{ product.price }}</td>
                                 <td>
-                                    <button class="btn btn-success btn-icon-split" type="button" style="margin: 2px;" data-bs-target="#add-item" data-bs-toggle="modal" data-product-id="{{ index }}"><span class="text-white-50 icon"><i class="fas fa-arrow-up"></i></span><span class="text-white text">اضافة</span></button>
+                                    <button @click="EmitAddTocart(product)" class="btn btn-success btn-icon-split" type="button" style="margin: 2px;" data-bs-target="#add-item" data-bs-toggle="modal" data-product-id="{{ index }}"><span class="text-white-50 icon"><i class="fas fa-arrow-up"></i></span><span class="text-white text">اضافة</span></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -38,4 +38,8 @@
     const props = defineProps({
         products:Array
     });
+ const emit = defineEmits(['addTocart']);
+ const EmitAddTocart =(product)=>{
+    emit("addTocart",product);
+ }
 </script>
