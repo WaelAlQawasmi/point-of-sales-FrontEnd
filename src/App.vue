@@ -1,26 +1,22 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+ import { RouterView } from 'vue-router';
 </script>
 
 <template>
- <div class="container m-0">
+ <div class="container-fluid m-0">
   <div class="row">
     <Sidebar :username="username" :isAdmin="isAdmin" />
-    <button v-show="isAdmin" @click="changeRole">Change Role</button>
-    <Prodactes :products="[{ image: 'image.png', price: 50, name: 'matcha' }, { image: 'image.png', price: 30, name: 'tea' }]" />
+    <router-view /> 
+    
+   <button v-show="isAdmin" @click="changeRole">Change Role</button> 
   </div>
- </div>
-
+</div>
 </template>
 
-<style scoped></style>
 
 
 <script>
 import Sidebar from '@/components/Sidebar.vue';
-import Prodactes from './components/prodactes.vue';
-
 export default {
   components: {
     Sidebar

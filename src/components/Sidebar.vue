@@ -6,9 +6,9 @@
         </a>
         <hr class="sidebar-divider my-0" />
         <ul class="navbar-nav text-light" id="accordionSidebar">
-            <li class="nav-item"><a class="nav-link" href="dashboard.php"><i class="fas fa-tachometer-alt"></i><span>الصفحة الرئيسية</span></a></li>
+            <li class="nav-item"> <router-link :to="{ name: 'home' }" class="nav-link" active-class="border  border-primary"> <i class="fas fa-tachometer-alt"></i><span>الصفحة الرئيسية</span></router-link></li>
             <li class="nav-item"  v-if="isAdmin" ><a class="nav-link" href="users.php"><i class="fas fa-user"></i><span>المستخدمين</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="point-of-sale.php"><i class="fas fa-table"></i><span>شاشة المبيعات</span></a></li>
+            <li class="nav-item"> <router-link :to="{ name: 'POS' }" class="nav-link"  active-class="border  border-primary"><i class="fas fa-table"></i><span>شاشة المبيعات</span></router-link></li>
             <li class="nav-item"  v-if="isAdmin"><a class="nav-link" href="inventory.php"><i class="fas fa-table"></i><span>المخزون</span></a></li>
             <li class="nav-item"  v-if="isAdmin" ><a class="nav-link" href="sales.php"><i class="fas fa-table"></i><span>تقارير البيع</span></a></li>
             <li class="nav-item"  v-if="isAdmin" ><a class="nav-link" href="logs.php"><i class="fas fa-user-circle"></i><span>Logs</span></a></li>
@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+ import { RouterLink } from 'vue-router';
     const props = defineProps({
         username:String,
         isAdmin:{
