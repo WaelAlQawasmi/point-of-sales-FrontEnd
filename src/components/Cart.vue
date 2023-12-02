@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <div class="card shadow">
             <div class="card-header py-3">
-                <p class="text-primary m-0 fw-bold">المنتجات</p>
+                <p class="text-primary m-0 fw-bold">السلة</p>
             </div>
             <div class="card-body">
                 

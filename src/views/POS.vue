@@ -1,5 +1,5 @@
 <template>
-        <div  class="col">
+        <div  class="row">
         <Prodactes  @addTocart="addToCart" :products="[{ image: 'image.png', price: 50, name: 'matcha' }, { image: 'image.png', price: 30, name: 'tea' }]" />
         <cart :cart="userCart"  @removeItem="removeFromCart" />
 </div>
