@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="(product, index) in products" :key="index">
-                                <td><img class="rounded-circle me-2" width="30" height="30" src="{{ product.image }}"></td>
+                                <td><img class="rounded-circle me-2" width="30" height="30" :src=" product.image "></td>
                                 <td>{{ product.name }}</td>
                                 <td>{{ product.price }}</td>
                                 <td>
