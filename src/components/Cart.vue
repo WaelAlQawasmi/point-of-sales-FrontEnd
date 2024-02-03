@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="(product, index) in cart" :key="index">
-                                <td><img class="rounded-circle me-2" width="30" height="30" src="{{ product.image }}"></td>
+                                <td><img class="rounded-circle me-2" width="30" height="30" :src=" product.image "></td>
                                 <td>{{ product.name }}</td>
                                 <td>{{ product.price }}</td>
                                 <td>
@@ -40,6 +40,6 @@
         emit("removeItem",item);
     }
     const props = defineProps({
-        cart:Array
+        product:Array
     });
 </script>
